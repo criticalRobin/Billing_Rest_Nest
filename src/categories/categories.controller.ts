@@ -9,7 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { CategoriesService } from './categories.service';
-import { Category } from './category.entity';
+import { Category } from '../entities/category.entity';
 
 @Controller('categories')
 export class CategoriesController {

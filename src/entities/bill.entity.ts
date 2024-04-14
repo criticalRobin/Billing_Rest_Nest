@@ -5,8 +5,8 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
-import { Client } from 'src/clients/client.entity';
-import { Detail } from 'src/detail/detail.entity';
+import { Client } from 'src/entities/client.entity';
+import { Detail } from 'src/entities/detail.entity';
 
 @Entity()
 export class Bill {

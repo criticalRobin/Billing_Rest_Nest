@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Detail } from './detail.entity';
+import { Detail } from '../entities/detail.entity';
 
 @Injectable()
 export class DetailService {

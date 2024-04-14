@@ -9,7 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { DetailService } from './detail.service';
-import { Detail } from './detail.entity';
+import { Detail } from '../entities/detail.entity';
 
 @Controller('detail')
 export class DetailController {

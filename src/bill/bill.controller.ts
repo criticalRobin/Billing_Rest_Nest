@@ -9,7 +9,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { BillService } from './bill.service';
-import { Bill } from './bill.entity';
+import { Bill } from '../entities/bill.entity';
 
 @Controller('bill')
 export class BillController {
