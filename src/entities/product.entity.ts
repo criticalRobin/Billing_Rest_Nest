@@ -7,13 +7,22 @@ export class Product {
   id: number;
 
   @Column()
+  code: string;
+
+  @Column()
   name: string;
 
   @Column()
-  description: string;
+  brand: string;
 
   @Column()
   unitPrice: number;
+
+  @Column()
+  measureUnit: string;
+
+  @Column()
+  registerDate: Date;
 
   @ManyToOne(() => Category, (category) => category.products)
   category: Category;

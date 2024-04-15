@@ -14,10 +14,22 @@ export class Bill {
   id: number;
 
   @Column()
-  date: Date;
+  billNumber: string;
+
+  @Column()
+  billDate: Date;
+
+  @Column()
+  creationDate: Date;
+
+  @Column()
+  authorizationDate: Date;
 
   @ManyToOne(() => Client, (client) => client.bills)
   client: Client;
+
+  @Column()
+  status: boolean;
 
   @OneToMany(() => Detail, (detail) => detail.bill)
   details: Detail[];
