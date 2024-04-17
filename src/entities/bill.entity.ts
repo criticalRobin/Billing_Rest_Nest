@@ -7,6 +7,7 @@ import {
 } from 'typeorm';
 import { Client } from 'src/entities/client.entity';
 import { Detail } from 'src/entities/detail.entity';
+import { PaymentMethodFactory } from 'src/payment/paymentMethod.factory';
 
 @Entity()
 export class Bill {
@@ -33,4 +34,28 @@ export class Bill {
 
   @OneToMany(() => Detail, (detail) => detail.bill)
   details: Detail[];
+
+  @Column()
+  paymentMethod: string;
+
+  @Column()
+  subtotal: number;
+
+  @Column()
+  total: number;
+
+  async pay(): Promise<void> {
+    const paymentMethod = PaymentMethodFactory.createPaymentMethod(
+      this.paymentMethod,
+    );
+    let totalAmount: number;
+
+    if (paymentMethod) {
+      totalAmount = await paymentMethod.pay(this.subtotal);
+    } else {
+      totalAmount = this.subtotal;
+    }
+
+    this.total = totalAmount;
+  }
 }

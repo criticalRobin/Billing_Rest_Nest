@@ -19,7 +19,8 @@ export class BillService {
   }
 
   async create(bill: Partial<Bill>): Promise<Bill> {
-    const newBill = this.billRepository.create(bill);
+    const newBill = await this.billRepository.create(bill);
+    await newBill.pay();
     return this.billRepository.save(newBill);
   }
 
