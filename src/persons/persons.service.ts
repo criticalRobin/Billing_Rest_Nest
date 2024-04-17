@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Person } from '../entities/person.entity';
 import { PersonSingleton } from './persons.singleton';
+// import { CreatePersonDto } from './dto/create-person.dto';
 
 @Injectable()
 export class PersonsService {
