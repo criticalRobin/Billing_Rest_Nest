@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Person } from '../entities/person.entity';
-import { PersonSingleton } from './person.singleton';
+import { PersonSingleton } from './persons.singleton';
 
 @Injectable()
 export class PersonsService {
